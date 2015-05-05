@@ -1,27 +1,24 @@
-Welcome!
+欢迎!
 ========
-Welcome to Zephir, an open source, high-level/domain specific language
-designed to ease the creation and maintainability of extensions for PHP
-with a focus on type and memory safety.
+欢迎来到Zephir，这是一个开源、高级的领域特定语言，它能很容易的创建和维护PHP扩展，重点是类型系统和内存操作是安全的。
 
-Some features
+主要功能
 -------------
-Zephir's main features are:
+Zephir主要的功能有：
 
 +-------------------+-----------------------------------------------------+
-| Type system       | dynamic/static                                      |
+| 类型系统          | 动态/静态                                           |
 +-------------------+-----------------------------------------------------+
-| Memory safety     | pointers or direct memory management aren't allowed |
+| 内存安全          | 不允许使用指针或直接内存管理                        |
 +-------------------+-----------------------------------------------------+
-| Compilation model | ahead of time                                       |
+| 编译模型          | 事前编译（也叫静态编译）                            |
 +-------------------+-----------------------------------------------------+
-| Memory model      | task-local garbage collection                       |
+| 内存模型          | task-local garbage collection                       |
 +-------------------+-----------------------------------------------------+
 
-A small taste
+一个小例子
 -------------
-The following code registers a class with a method that filters variables returning its
-alphabetic characters:
+下面的代码注册了一个Filter类，Filter类的alpha方法返回给定参数的字母
 
 .. code-block:: zephir
 
@@ -51,7 +48,7 @@ alphabetic characters:
         }
     }
 
-The class can be used from PHP as follows:
+在PHP中使用这个类：
 
 .. code-block:: php
 
