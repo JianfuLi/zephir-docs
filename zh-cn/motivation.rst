@@ -1,10 +1,15 @@
 Why Zephir?
+
 ===========
 Today’s PHP applications must balance a number of concerns including stability, performance and functionality.
 Every PHP application is based on a set of common components that are also base for most of the application.
+现在的PHP应用必须平衡这些问题——稳定性，性能和功能。
+每个PHP应用都是基于一组通用组件，这些通用组件也是大多数应用程序的通用组件。
+
 
 These common components are libraries/frameworks or a combination of them. Once installed, frameworks rarely
 change, being the foundation of the application they must be highly functional and also very fast.
+这些通用组件是库/框架或者是它们的组合。一旦安装，框架很少变化，作为应用程序的基础，他们必须非常快。
 
 Getting fast and robust libraries can be complicated due to high levels of abstraction that are
 typically implemented on them. Given the condition that base libraries or frameworks rarely change,
