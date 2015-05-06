@@ -9,25 +9,30 @@ Every PHP application is based on a set of common components that are also base 
 
 These common components are libraries/frameworks or a combination of them. Once installed, frameworks rarely
 change, being the foundation of the application they must be highly functional and also very fast.
-这些通用组件是库/框架或者是它们的组合。一旦安装，框架很少变化，作为应用程序的基础，他们必须非常快。
+这些通用组件是库/框架或者是它们的组合。一旦安装，框架很少变化，作为应用程序的基础，他们必须有很高的实用性并且非常快。
 
 Getting fast and robust libraries can be complicated due to high levels of abstraction that are
 typically implemented on them. Given the condition that base libraries or frameworks rarely change,
 there is an opportunity to build extensions that provide this functionality taking advantage of the
 compilation improving performance and resource consumption.
+由于高层次的抽象及实现，从而使那些快速和强壮的类库变得复杂。在这些基础库或框架很少变更的情况下，我们可以构建扩展来实现这些功能，利用扩展编译的优势来提高性能和降低资源的消耗。
 
 With Zephir, you can implement object-oriented libraries/frameworks/applications that can be used from
 PHP gaining important seconds that can make your application faster while improving the user experience.
+使用 Zephir，你可以实现面向对象的类库/框架/应用，可以使你的应用程序更快的同时也改善了用户体验。
 
 If You Are a PHP Programmer...
+如果你是一个PHP程序员...
 ------------------------------
 PHP is one of the most popular languages in use for the development of web applications.
 Dynamically typed and interpreted languages like PHP offer very high productivity due to their flexibility.
+PHP是Web开发最流行的语言之一。像PHP这类动态类型的解释型语言，由于它的灵活性从而效率非常高。
 
 Since version 4 and then 5, PHP is based on the Zend Engine implementation. This is a virtual machine
 that executes the PHP code from its bytecode representation. Zend Engine is almost present in every
 PHP installation in the world, with Zephir, you can create extensions for PHP running under the
 Zend Engine.
+从PHP4到PHP5，PHP都是基于Zend引擎的实现。
 
 PHP is hosting Zephir, so they obviously have a lot of similarities, however; they have
 important differences that give Zephir its own personality. For example, Zephir is more strict,
