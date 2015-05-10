@@ -1,29 +1,26 @@
-Compiler Warnings
+编译器警告
 =================
 
-The compiler raise warnings when it finds situations where the code can be improved or a potential error
-can be avoided.
+当编译器发现有可以改善的代码或者可避免潜在的错误时，就会触发警告。
 
-Warnings can be enabled via command line parameters or can be added to the config.json to enable or disable
-them permanently:
-
-You can enable warnings by passing its name prefixed by -w:
+警告可以通过命令行参数来启用，也可以在config.json里开启或者禁用：
+你可以用单词的前缀 -w 来启用它（小写）：
 
 .. code-block:: bash
 
     zephir -wunused-variable -wnonexistent-function
 
-Warnings can be disabled by passing its name prefixed by -W:
+禁用警告也是用单词的前缀 -W （大写）：
 
 .. code-block:: bash
 
     zephir -Wunused-variable -Wnonexistent-function
 
-The following warnings are supported:
+Zephir支持以下警告
 
 unused-variable
 ^^^^^^^^^^^^^^^
-Raised when a variable is declared but it is not used within a method. This warning is enabled by default.
+方法中已申明的变量未被使用时触发，访警告默认启用：
 
 .. code-block:: zephir
 
@@ -36,7 +33,7 @@ Raised when a variable is declared but it is not used within a method. This warn
 
 unused-variable-external
 ^^^^^^^^^^^^^^^^^^^^^^^^
-Raised when a parameter is declared but it is not used within a method.
+方法中已申明的参数未被使用时触发：
 
 .. code-block:: zephir
 
@@ -47,7 +44,7 @@ Raised when a parameter is declared but it is not used within a method.
 
 possible-wrong-parameter-undefined
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Raised when a method is called with a wrong type for a parameter:
+调用方法时使用了错误的类型参数时触发：
 
 .. code-block:: zephir
 
@@ -63,7 +60,7 @@ Raised when a method is called with a wrong type for a parameter:
 
 nonexistent-function
 ^^^^^^^^^^^^^^^^^^^^
-Raised when a non-existent function at compile time is called:
+在编译期间调用不存在的方法时触发：
 
 .. code-block:: zephir
 
@@ -74,7 +71,7 @@ Raised when a non-existent function at compile time is called:
 
 nonexistent-class
 ^^^^^^^^^^^^^^^^^
-Raised when a non-existent class is used at compile time:
+在编译期间使用不存在的类时触发：
 
 .. code-block:: zephir
 
@@ -87,7 +84,7 @@ Raised when a non-existent class is used at compile time:
 
 non-valid-isset
 ^^^^^^^^^^^^^^^
-Raised when the compiler detects that an 'isset' operation is being made on a non array or object value:
+当编译器检测到isset操作应用于非数组或对象时触发：
 
 .. code-block:: zephir
 
@@ -99,7 +96,7 @@ Raised when the compiler detects that an 'isset' operation is being made on a no
 
 non-array-update
 ^^^^^^^^^^^^^^^^
-Raised when the compiler detects that an array update operation is being made on a non array value:
+当编译器检测到对非数组对象进行数组的更新操作时触发：
 
 .. code-block:: zephir
 
@@ -111,7 +108,7 @@ Raised when the compiler detects that an array update operation is being made on
 
 non-valid-objectupdate
 ^^^^^^^^^^^^^^^^^^^^^^
-Raised when the compiler detects that an object update operation is being made on a non object:
+当编译器检测到对非对象进行对象的更新操作时触发：
 
 .. code-block:: zephir
 
@@ -123,7 +120,7 @@ Raised when the compiler detects that an object update operation is being made o
 
 non-valid-fetch
 ^^^^^^^^^^^^^^^
-Raised when the compiler detects that a 'fetch' operation is being made on a non array or object value:
+当编译器检测到fetch操作作用于非数组或对象时触发：
 
 .. code-block:: zephir
 
@@ -135,7 +132,7 @@ Raised when the compiler detects that a 'fetch' operation is being made on a non
 
 invalid-array-index
 ^^^^^^^^^^^^^^^^^^^
-Raised when the compiler detects that an invalid array index is used:
+当编译器检测到无效的数组索引时触发：
 
 .. code-block:: zephir
 
@@ -147,7 +144,7 @@ Raised when the compiler detects that an invalid array index is used:
 
 non-array-append
 ^^^^^^^^^^^^^^^^
-Raised when the compiler detects that an element is being tried to be appended to a non array variable:
+当编译器检测到元素被追加到非数组变量时触发：
 
 .. code-block:: zephir
 
@@ -156,28 +153,3 @@ Raised when the compiler detects that an element is being tried to be appended t
         var b = false;
         let b[] = "some value";
     }
-
-non-array-append
-^^^^^^^^^^^^^^^^
-Raised when the compiler detects that an element is being tried to be appended to a non array variable:
-
-.. code-block:: zephir
-
-    public function some()
-    {
-        var b = false;
-        let b[] = "some value";
-    }
-
-            'invalid-return-type'                => true,
-            'unreachable-code'                   => true,
-            'nonexistant-constant'               => true,
-            'not-supported-magic-constant'       => true,
-            'non-valid-decrement'                => true,
-            'non-valid-increment'                => true,
-            'non-valid-clone'                    => true,
-            'non-valid-new'                      => true,
-            'non-array-access'                   => true,
-            'invalid-reference'                  => true,
-            'invalid-typeof-comparison'          => true,
-            'conditional-initialization'         => true
