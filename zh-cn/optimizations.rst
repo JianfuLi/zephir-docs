@@ -1,30 +1,38 @@
 Optimizations
+优化
 =============
 Because the code in Zephir is sometimes very high-level, a C compiler might not be in the ability to optimize this code enough.
+有时候Zephir代码过于高级，所以C编译器不足以优化这些代码。
 
 Zephir, thanks to its AOT compiler, is able to optimize the code at compile time potentially improving its execution time
 or reducing the memory required by the program.
+得益于Zephir的AOT编译，使得我们能在编译时优化代码，改善程序潜在的执行时间或者减少内存的使用。
 
 You can enable optimizations by passing its name prefixed by -f:
+你可以通过单词前缀-f参数来启用优化：
 
 .. code-block:: bash
 
     zephir -fstatic-type-inference -flocal-context-pass
 
 Warnings can be disabled by passing its name prefixed by -fno-:
+并且使用单词前缀-fno-来禁用优化：
 
 .. code-block:: bash
 
     zephir -fno-static-type-inference -fno-call-gatherer-pass
 
 The following optimizations are supported:
+Zephir支持这些优化：
 
 static-type-inference
 ^^^^^^^^^^^^^^^^^^^^^
 This compilation pass is very important, since it looks for dynamic variables that can potentially
 transformed into static/primitive types which are better optimized by the underlying compiler.
+这个编译优化是很重要的，因为它会寻找潜在的可以转化为静态/原始类型的动态变量，这样底层编译器就能更好地优化它们。
 
 The following code use a set dynamic variables to perform some mathematical calculations:
+下面的代码使用一组动态变量执行一些数学计算：
 
 .. code-block:: zephir
 
@@ -45,6 +53,7 @@ The following code use a set dynamic variables to perform some mathematical calc
 Variables 'a', 'b' and 'i' are used all of them in mathematical operations and can thus be transformed
 into static variables taking advantage of other compilation passes. After this pass, the compiler
 automatically rewrites this code to:
+变量'a'，'b'和'i'都被用于数学运算，因此可以考虑把它们转为静态变量
 
 .. code-block:: zephir
 
